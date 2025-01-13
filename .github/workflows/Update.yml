@@ -1,0 +1,128 @@
+name: Update
+
+on: 
+  repository_dispatch:
+  workflow_dispatch:
+
+# 定时触发编译
+  # schedule:
+    # - cron: 0 */1 * * *
+
+# 点赞☆Star触发编译
+#  watch:
+#    types: [started]
+
+jobs:
+  Update:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Clone Repository
+      uses: actions/checkout@v3
+
+    - name: Set git
+      run : |
+        git config --global user.email "109743406+zijieKwok@users.noreply.github.com"
+        git config --global user.name "zijieKwok"
+        sudo timedatectl set-timezone "Asia/Shanghai"
+
+    - name: Delete workflow runs
+      uses: zijieKwok/delete-workflow-runs@main
+      continue-on-error: true
+      with:
+        retain_days: 1
+        keep_minimum_runs: 0  
+        
+    - name: Update
+      run: |
+
+        rm -rf ./luci-app-pushbot
+        rm -rf ./linkease/*   
+        rm -rf ./op-mosdns
+        rm -rf ./op-alist/*
+        rm -rf ./op-ddnsgo/*
+        rm -rf ./op-lucky/*
+        rm -rf ./patch/wall/*
+        rm -rf ./patch/wall-luci/luci-app-passwall
+        rm -rf ./patch/wall-luci/luci-app-passwall2
+        rm -rf ./patch/wall-luci/luci-app-openclash
+        rm -rf ./op-smartdns/luci-app-smartdns
+        rm -rf ./theme/luci-theme-argon-18.06
+        rm -rf ./theme/luci-theme-argon
+        
+        
+        
+         
+        # git clone https://github.com/zzsj0928/luci-app-pushbot ./luci-app-pushbot
+        # rm -rf ./luci-app-pushbo/README.md
+        # git clone https://github.com/linkease/nas-packages-luci ./linkease/nas-packages-luci
+        # mv ./linkease/nas-packages-luci/luci ./linkease/
+        # rm -rf ./linkease/nas-packages-luci
+        
+        # git clone https://github.com/linkease/nas-packages ./linkease/nas-packages
+        # mv ./linkease/nas-packages/multimedia/ffmpeg-remux ./linkease/nas-packages/
+        # mv ./linkease/nas-packages/network/services/* ./linkease/nas-packages/
+        # rm -rf ./linkease/nas-packages/multimedia
+        # rm -rf ./linkease/nas-packages/network
+        # rm -rf ./linkease/nas-packages/.git
+        # rm -rf ./linkease/nas-packages/README.md
+        
+        # git clone https://github.com/linkease/istore ./linkease/iStore
+        # mv ./linkease/iStore/luci/*  ./linkease/luci/
+        # rm -rf ./linkease/iStore
+
+        # git clone https://github.com/linkease/istore-ui ./linkease/istore-ui
+        # mv ./linkease/istore-ui/app-store-ui ./linkease/luci/
+        # rm -rf ./linkease/istore-ui  
+
+        git clone https://github.com/xiaorouji/openwrt-passwall-packages ./patch/wall
+        rm -rf ./patch/wall/.github
+        
+        git clone https://github.com/kiddin9/kwrt-packages ./patch/wall-luci/pass
+        git clone https://github.com/xiaorouji/openwrt-passwall2 ./patch/wall-luci/pass2
+        mv ./patch/wall-luci/pass/luci-app-passwall ./patch/wall-luci/
+        mv ./patch/wall-luci/pass2/luci-app-passwall2 ./patch/wall-luci/
+        rm -rf ./patch/wall-luci/pass
+        rm -rf ./patch/wall-luci/pass2
+
+        git clone --depth=1 https://github.com/vernesong/OpenClash.git -b dev
+        mv ./OpenClash/luci-app-openclash ./patch/wall-luci/
+        rm -rf ./OpenClash
+
+        git clone https://github.com/sbwml/luci-app-mosdns ./op-mosdns
+        git clone https://github.com/sbwml/v2ray-geodata ./op-mosdns/v2ray-geodata
+        rm -rf ./op-mosdns/install.sh
+        rm -rf ./op-mosdns/.github
+        rm -rf ./op-mosdns/README.md
+        git clone https://github.com/sbwml/openwrt-alist ./op-alist/
+        rm -rf ./op-alist/.github
+        rm -rf ./op-alist/README.md
+        rm -rf ./op-alist/install.sh
+        git clone https://github.com/sirpdboy/luci-app-ddns-go ./op-ddnsgo/
+        git clone https://github.com/sirpdboy/luci-app-lucky ./op-lucky/
+        rm -rf ./op-lucky/README.md
+        rm -rf ./op-ddnsgo/README.md
+
+       
+        git clone https://github.com/pymumu/luci-app-smartdns -b lede ./op-smartdns/luci-app-smartdns
+        rm -rf ./op-smartdns/luci-app-smartdns/.git
+
+
+        # git clone https://github.com/jerrykuku/luci-theme-argon ./theme/luci-theme-argon
+        # git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./theme/luci-theme-argon-18.06          
+        # rm -rf ./theme/luci-theme-argon/.github
+        # rm -rf ./theme/luci-theme-argon/.gitignore
+        # rm -rf ./theme/luci-theme-argon-18.06/.github
+        # rm -rf ./theme/luci-theme-argon-18.06/.gitignore       
+        # rm -rf ./theme/luci-theme-argon/README*
+        # rm -rf ./theme/luci-theme-argon/RELEASE*
+        # rm -rf ./theme/luci-theme-argon-18.06/README*
+        
+        
+
+        
+    - name: Apply
+      run: |
+        git add .
+        git commit -m "Auto Sync: $(date +%Y-%m-%d" "%H:%M)"
+        git push -f 
+              
