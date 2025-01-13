@@ -35,9 +35,7 @@ jobs:
     - name: Update
       run: |
 
-        
-           
-        
+      
         rm -rf ./op-alist
         rm -rf ./op-ddnsgo
         rm -rf ./op-lucky
