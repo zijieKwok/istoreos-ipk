@@ -58,64 +58,10 @@ jobs:
         rm -rf ./op-daed/*
         
          
-        git clone https://github.com/zzsj0928/luci-app-pushbot ./luci-app-pushbot
+        git clone https://github.com/kiddin9/kwrt-packages -b main ./luci-app-pushbot
         rm -rf ./luci-app-pushbo/README.md
-        # git clone https://github.com/tty228/luci-app-wechatpush ./luci-app-wechatpush
-        # rm -rf ./luci-app-wechatpush/README.md
-        # rm -rf ./luci-app-wechatpush/README_en.md
-        # rm -rf ./luci-app-wechatpush/.github
-        # git clone https://github.com/stevenke1981/luci-app-easymesh ./luci-app-easymesh
-        # rm -rf ./luci-app-easymesh/README.md
-        # git clone https://github.com/ilxp/luci-app-ikoolproxy ./luci-app-ikoolproxy
-        # rm -rf ./luci-app-ikoolproxy/.github
-        # rm -rf ./luci-app-ikoolproxy/change.log
-        # rm -rf ./luci-app-ikoolproxy/development.doc
-        # rm -rf ./luci-app-ikoolproxy/README.md
-
-       
-        # git clone https://github.com/linkease/nas-packages-luci ./linkease/nas-packages-luci
-        # mv ./linkease/nas-packages-luci/luci ./linkease/
-        # rm -rf ./linkease/nas-packages-luci
-        
-        # git clone https://github.com/linkease/nas-packages ./linkease/nas-packages
-        # mv ./linkease/nas-packages/multimedia/ffmpeg-remux ./linkease/nas-packages/
-        # mv ./linkease/nas-packages/network/services/* ./linkease/nas-packages/
-        # rm -rf ./linkease/nas-packages/multimedia
-        # rm -rf ./linkease/nas-packages/network
-        # rm -rf ./linkease/nas-packages/.git
-        # rm -rf ./linkease/nas-packages/README.md
-        
-        # git clone https://github.com/linkease/istore ./linkease/iStore
-        # mv ./linkease/iStore/luci/*  ./linkease/luci/
-        # rm -rf ./linkease/iStore
-
-        # git clone https://github.com/linkease/istore-ui ./linkease/istore-ui
-        # mv ./linkease/istore-ui/app-store-ui ./linkease/luci/
-        # rm -rf ./linkease/istore-ui  
-
-
-
-        # git clone https://github.com/destan19/OpenAppFilter ./op-oaf
-        # rm -rf ./op-oaf/README.md
-
-        
-        git clone https://github.com/xiaorouji/openwrt-passwall-packages ./patch/wall
+        git clone https://github.com/zijieKwok/passwall-packages ./patch/wall
         rm -rf ./patch/wall/.github
-        # rm -rf ./patch/wall/chinadns-ng
-        
-        # git clone https://github.com/fw876/helloworld ./patch/wall/helloworld
-        # mv ./patch/wall/helloworld/redsocks2 ./patch/wall/
-        # mv ./patch/wall/helloworld/lua-neturl ./patch/wall/
-        # mv ./patch/wall/helloworld/shadow-tls ./patch/wall/
-        # mv ./patch/wall/helloworld/luci-app-ssr-plus ./patch/wall-luci/
-        
-        # rm -rf ./patch/wall/gn
-        # rm -rf ./patch/wall/naiveproxy
-        # mv ./patch/wall/helloworld/gn ./patch/wall/
-        # mv ./patch/wall/helloworld/naiveproxy ./patch/wall/
-        
-        rm -rf ./patch/wall/helloworld
-    
         git clone https://github.com/kiddin9/kwrt-packages ./patch/wall-luci/pass
         git clone https://github.com/xiaorouji/openwrt-passwall2 ./patch/wall-luci/pass2
         mv ./patch/wall-luci/pass/luci-app-passwall ./patch/wall-luci/
@@ -137,18 +83,6 @@ jobs:
         rm -rf ./patch/wall-luci/luci-app-homeproxy/.git
         
         
-        # git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic ./luci-app-unblockneteasemusic/
-        # rm -rf ./luci-app-unblockneteasemusic/.github
-        # rm -rf ./luci-app-unblockneteasemusic/README.md
-
-
-        # git clone https://github.com/jerrykuku/luci-theme-argon ./theme/luci-theme-argon
-        # rm -rf ./theme/luci-theme-argon/.github
-        # rm -rf ./theme/luci-theme-argon/.gitignore     
-        # rm -rf ./theme/luci-theme-argon/README*
-        # rm -rf ./theme/luci-theme-argon/RELEASE*
-
-        
         git clone https://github.com/unifreq/luci-app-oled ./oled
         mv ./oled/luci-app-oled ./
         rm -rf ./oled
@@ -168,6 +102,8 @@ jobs:
         rm -rf ./op-alist/README.md
         rm -rf ./op-alist/install.sh
         git clone https://github.com/sirpdboy/luci-app-ddns-go ./op-ddnsgo/
+        rm -rf ./op-ddnsgo/README.md
+        rm -rf ./op-ddnsgo/.github
         git clone https://github.com/pymumu/luci-app-smartdns -b lede ./op-smartdns/luci-app-smartdns
         rm -rf ./op-smartdns/luci-app-smartdns/.git
 
