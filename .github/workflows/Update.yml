@@ -156,11 +156,13 @@ jobs:
         git clone https://github.com/sirpdboy/luci-app-lucky ./op-lucky/tmp
         mv ./op-lucky/tmp/luci-app-lucky ./op-lucky/
         mv ./op-lucky/tmp/lucky ./op-lucky/
-        rm -rf ./op-lucky/tmpgit clone https://github.com/sbwml/luci-app-mosdns ./op-mosdns
+        rm -rf ./op-lucky/tmp
+        git clone https://github.com/sbwml/luci-app-mosdns -b v5-lua ./op-mosdns/tmp
+        mv ./op-mosdns/tmp/luci-app-mosdns ./op-mosdns/
+        mv ./op-mosdns/tmp/mosdns ./op-mosdns/
+        mv ./op-mosdns/tmp/v2dat ./op-mosdns/
+        rm -rf ./op-mosdns/tmp     
         git clone https://github.com/sbwml/v2ray-geodata ./op-mosdns/v2ray-geodata
-        rm -rf ./op-mosdns/install.sh
-        rm -rf ./op-mosdns/.github
-        rm -rf ./op-mosdns/README.md
         git clone https://github.com/sbwml/openwrt-alist ./op-alist/
         rm -rf ./op-alist/.github
         rm -rf ./op-alist/README.md
