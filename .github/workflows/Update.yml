@@ -153,7 +153,7 @@ jobs:
         mv ./oled/luci-app-oled ./
         rm -rf ./oled
 
-        git clone https://github.com/gdy666/luci-app-lucky ./op-lucky/tmp
+        git clone https://github.com/sirpdboy/luci-app-lucky ./op-lucky/tmp
         mv ./op-lucky/tmp/luci-app-lucky ./op-lucky/
         mv ./op-lucky/tmp/lucky ./op-lucky/
         rm -rf ./op-lucky/tmpgit clone https://github.com/sbwml/luci-app-mosdns ./op-mosdns
@@ -166,11 +166,6 @@ jobs:
         rm -rf ./op-alist/README.md
         rm -rf ./op-alist/install.sh
         git clone https://github.com/sirpdboy/luci-app-ddns-go ./op-ddnsgo/
-        git clone https://github.com/sirpdboy/luci-app-lucky ./op-lucky/
-        rm -rf ./op-lucky/README.md
-        rm -rf ./op-ddnsgo/README.md
-
-       
         git clone https://github.com/pymumu/luci-app-smartdns -b lede ./op-smartdns/luci-app-smartdns
         rm -rf ./op-smartdns/luci-app-smartdns/.git
 
