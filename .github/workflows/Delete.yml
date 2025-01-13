@@ -41,7 +41,7 @@ jobs:
         rm -rf ./op-smartdns
         # rm -rf ./luci-app-unblockneteasemusic
         # rm -rf ./linkease/*   
-        # rm -rf ./op-oaf
+        rm -rf ./op-ddnsgo
         rm -rf ./luci-app-oled
         rm -rf ./patch
         rm -rf ./op-daed
