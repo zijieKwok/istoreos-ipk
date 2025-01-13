@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 # 定时触发编译
-  # schedule:
-    # - cron: 0 */1 * * *
+  schedule:
+    - cron: 0 */1 * * *
 
 # 点赞☆Star触发编译
 #  watch:
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Clone Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set git
       run : |
@@ -26,7 +26,7 @@ jobs:
         sudo timedatectl set-timezone "Asia/Shanghai"
 
     - name: Delete workflow runs
-      uses: zijieKwok/delete-workflow-runs@main
+      uses: Mattraks/delete-workflow-runs@main
       continue-on-error: true
       with:
         retain_days: 1
@@ -35,18 +35,42 @@ jobs:
     - name: Update
       run: |
 
-      
-        rm -rf ./op-alist
-        rm -rf ./op-ddnsgo
-        rm -rf ./op-lucky
-        rm -rf ./patch
-        
-        
-        
+        rm -rf ./luci-app-pushbot
+        # rm -rf ./luci-app-wechatpush
+        # rm -rf ./luci-app-easymesh
+        # rm -rf ./luci-app-ikoolproxy
+        # rm -rf ./luci-app-unblockneteasemusic
+        # rm -rf ./linkease/*   
+        rm -rf ./op-oaf
+        rm -rf ./patch/wall/*
+        rm -rf ./patch/wall-luci/luci-app-passwall
+        rm -rf ./patch/wall-luci/luci-app-passwall2
+        rm -rf ./patch/wall-luci/luci-app-ssr-plus
+        rm -rf ./patch/wall-luci/luci-app-openclash
+        rm -rf ./patch/wall-luci/luci-app-mihomo
+        rm -rf ./patch/wall-luci/mihomo
+        rm -rf ./patch/wall-luci/luci-app-homeproxy
+        # rm -rf ./theme/luci-theme-argon
+        rm -rf ./luci-app-oled
+        rm -rf ./op-lucky/*
+        rm -rf ./op-daed/*
         
          
-        # git clone https://github.com/zzsj0928/luci-app-pushbot ./luci-app-pushbot
-        # rm -rf ./luci-app-pushbo/README.md
+        git clone https://github.com/zzsj0928/luci-app-pushbot ./luci-app-pushbot
+        rm -rf ./luci-app-pushbo/README.md
+        # git clone https://github.com/tty228/luci-app-wechatpush ./luci-app-wechatpush
+        # rm -rf ./luci-app-wechatpush/README.md
+        # rm -rf ./luci-app-wechatpush/README_en.md
+        # rm -rf ./luci-app-wechatpush/.github
+        # git clone https://github.com/stevenke1981/luci-app-easymesh ./luci-app-easymesh
+        # rm -rf ./luci-app-easymesh/README.md
+        # git clone https://github.com/ilxp/luci-app-ikoolproxy ./luci-app-ikoolproxy
+        # rm -rf ./luci-app-ikoolproxy/.github
+        # rm -rf ./luci-app-ikoolproxy/change.log
+        # rm -rf ./luci-app-ikoolproxy/development.doc
+        # rm -rf ./luci-app-ikoolproxy/README.md
+
+       
         # git clone https://github.com/linkease/nas-packages-luci ./linkease/nas-packages-luci
         # mv ./linkease/nas-packages-luci/luci ./linkease/
         # rm -rf ./linkease/nas-packages-luci
@@ -67,51 +91,77 @@ jobs:
         # mv ./linkease/istore-ui/app-store-ui ./linkease/luci/
         # rm -rf ./linkease/istore-ui  
 
-        # git clone https://github.com/xiaorouji/openwrt-passwall-packages ./patch/wall
-        # rm -rf ./patch/wall/.github
+
+
+        git clone https://github.com/destan19/OpenAppFilter ./op-oaf
+        rm -rf ./op-oaf/README.md
+
         
-        # git clone https://github.com/kiddin9/kwrt-packages ./patch/wall-luci/pass
-        # git clone https://github.com/xiaorouji/openwrt-passwall2 ./patch/wall-luci/pass2
-        # mv ./patch/wall-luci/pass/luci-app-passwall ./patch/wall-luci/
-        # mv ./patch/wall-luci/pass2/luci-app-passwall2 ./patch/wall-luci/
-        # rm -rf ./patch/wall-luci/pass
-        # rm -rf ./patch/wall-luci/pass2
+        git clone https://github.com/xiaorouji/openwrt-passwall-packages ./patch/wall
+        rm -rf ./patch/wall/.github
+        # rm -rf ./patch/wall/chinadns-ng
+        
+        # git clone https://github.com/fw876/helloworld ./patch/wall/helloworld
+        # mv ./patch/wall/helloworld/redsocks2 ./patch/wall/
+        # mv ./patch/wall/helloworld/lua-neturl ./patch/wall/
+        # mv ./patch/wall/helloworld/shadow-tls ./patch/wall/
+        # mv ./patch/wall/helloworld/luci-app-ssr-plus ./patch/wall-luci/
+        
+        # rm -rf ./patch/wall/gn
+        # rm -rf ./patch/wall/naiveproxy
+        # mv ./patch/wall/helloworld/gn ./patch/wall/
+        # mv ./patch/wall/helloworld/naiveproxy ./patch/wall/
+        
+        rm -rf ./patch/wall/helloworld
+    
+        git clone https://github.com/kiddin9/kwrt-packages ./patch/wall-luci/pass
+        git clone https://github.com/xiaorouji/openwrt-passwall2 ./patch/wall-luci/pass2
+        mv ./patch/wall-luci/pass/luci-app-passwall ./patch/wall-luci/
+        mv ./patch/wall-luci/pass2/luci-app-passwall2 ./patch/wall-luci/
+        rm -rf ./patch/wall-luci/pass
+        rm -rf ./patch/wall-luci/pass2
 
-        # git clone --depth=1 https://github.com/vernesong/OpenClash.git -b dev
-        # mv ./OpenClash/luci-app-openclash ./patch/wall-luci/
-        # rm -rf ./OpenClash
+        git clone --depth=1 https://github.com/vernesong/OpenClash.git -b dev
+        mv ./OpenClash/luci-app-openclash ./patch/wall-luci/
+        rm -rf ./OpenClash
 
-        # git clone https://github.com/sbwml/luci-app-mosdns ./op-mosdns
-        # git clone https://github.com/sbwml/v2ray-geodata ./op-mosdns/v2ray-geodata
-        # rm -rf ./op-mosdns/install.sh
-        # rm -rf ./op-mosdns/.github
-        # rm -rf ./op-mosdns/README.md
-        # git clone https://github.com/sbwml/openwrt-alist ./op-alist/
-        # rm -rf ./op-alist/.github
-        # rm -rf ./op-alist/README.md
-        # rm -rf ./op-alist/install.sh
-        # git clone https://github.com/sirpdboy/luci-app-ddns-go ./op-ddnsgo/
-        # git clone https://github.com/sirpdboy/luci-app-lucky ./op-lucky/
-        # rm -rf ./op-lucky/README.md
-        # rm -rf ./op-ddnsgo/README.md
-
-       
-        # git clone https://github.com/pymumu/luci-app-smartdns -b lede ./op-smartdns/luci-app-smartdns
-        # rm -rf ./op-smartdns/luci-app-smartdns/.git
+        git clone https://github.com/morytyann/OpenWrt-mihomo ./patch/wall-luci/tmp
+        mv ./patch/wall-luci/tmp/luci-app-mihomo ./patch/wall-luci/
+        mv ./patch/wall-luci/tmp/mihomo ./patch/wall-luci/
+        rm -rf ./patch/wall-luci/tmp
+        
+        git clone https://github.com/immortalwrt/homeproxy ./patch/wall-luci/luci-app-homeproxy
+        rm -rf ./patch/wall-luci/luci-app-homeproxy/.github
+        rm -rf ./patch/wall-luci/luci-app-homeproxy/.git
+        
+        
+        # git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic ./luci-app-unblockneteasemusic/
+        # rm -rf ./luci-app-unblockneteasemusic/.github
+        # rm -rf ./luci-app-unblockneteasemusic/README.md
 
 
         # git clone https://github.com/jerrykuku/luci-theme-argon ./theme/luci-theme-argon
-        # git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./theme/luci-theme-argon-18.06          
         # rm -rf ./theme/luci-theme-argon/.github
-        # rm -rf ./theme/luci-theme-argon/.gitignore
-        # rm -rf ./theme/luci-theme-argon-18.06/.github
-        # rm -rf ./theme/luci-theme-argon-18.06/.gitignore       
+        # rm -rf ./theme/luci-theme-argon/.gitignore     
         # rm -rf ./theme/luci-theme-argon/README*
         # rm -rf ./theme/luci-theme-argon/RELEASE*
-        # rm -rf ./theme/luci-theme-argon-18.06/README*
-        
-        
 
+        
+        git clone https://github.com/unifreq/luci-app-oled ./oled
+        mv ./oled/luci-app-oled ./
+        rm -rf ./oled
+
+        git clone https://github.com/gdy666/luci-app-lucky ./op-lucky/tmp
+        mv ./op-lucky/tmp/luci-app-lucky ./op-lucky/
+        mv ./op-lucky/tmp/lucky ./op-lucky/
+        rm -rf ./op-lucky/tmp      
+
+        git clone https://github.com/QiuSimons/luci-app-daed ./op-daed/tmp
+        mv ./op-daed/tmp/luci-app-daed ./op-daed/
+        mv ./op-daed/tmp/daed ./op-daed/
+        rm -rf ./op-daed/tmp
+        mkdir -p ./op-daed/libcron && wget -O ./op-daed/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
+        
         
     - name: Apply
       run: |
