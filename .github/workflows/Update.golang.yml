@@ -37,9 +37,9 @@ jobs:
 
         rm -rf ./patch/diy/golang
          
-        git clone https://github.com/zijieKwok/istoreos-actions ./patch/tmp
-        mv ./patch/tmp/istoreos/golang ./patch/diy/golang
-        rm -rf ./patch/tmp
+        # git clone https://github.com/zijieKwok/istoreos-actions ./patch/tmp
+        # mv ./patch/tmp/istoreos/golang ./patch/diy/golang
+        # rm -rf ./patch/tmp
         
 
         
