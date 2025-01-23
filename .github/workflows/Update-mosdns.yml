@@ -1,0 +1,55 @@
+name: Update mosdns
+
+on: 
+  repository_dispatch:
+  workflow_dispatch:
+
+# 定时触发编译
+#  schedule:
+#    - cron: 0 */1 * * *
+
+# 点赞☆Star触发编译
+#  watch:
+#    types: [started]
+
+jobs:
+  Update:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Clone Repository
+      uses: actions/checkout@v3
+
+    - name: Set git
+      run : |
+        git config --global user.email "109743406+zijieKwok@users.noreply.github.com"
+        git config --global user.name "zijieKwok"
+        sudo timedatectl set-timezone "Asia/Shanghai"
+
+    - name: Delete workflow runs
+      uses: zijieKwok/delete-workflow-runs@main
+      continue-on-error: true
+      with:
+        retain_days: 1
+        keep_minimum_runs: 0  
+        
+    - name: Update
+      run: |
+
+        rm -rf ./op-mosdns/*
+        rm -rf ./op-mosdns/v2ray-geodata
+         
+        git clone https://github.com/sbwml/luci-app-mosdns -b v5-lua ./op-mosdns/tmp
+        mv ./op-mosdns/tmp/luci-app-mosdns ./op-mosdns/
+        mv ./op-mosdns/tmp/mosdns ./op-mosdns/
+        mv ./op-mosdns/tmp/v2dat ./op-mosdns/
+        rm -rf ./op-mosdns/tmp     
+        git clone https://github.com/sbwml/v2ray-geodata ./op-mosdns/v2ray-geodata
+        
+
+        
+    - name: Apply
+      run: |
+        git add .
+        git commit -m "Auto Sync: $(date +%Y-%m-%d" "%H:%M)"
+        git push -f 
+              
