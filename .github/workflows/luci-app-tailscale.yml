@@ -38,9 +38,9 @@ jobs:
         rm -rf ./tailscale/luci-app-tailscale
         
          
-        # git clone https://github.com/asvow/luci-app-tailscale.git
-        # mv ./tailscale/luci-app-openclash ./tailscale/luci-app-tailscale/
-        # rm -rf ./tailscale
+        git clone https://github.com/asvow/luci-app-tailscale.git
+        mv ./tailscale/luci-app-openclash ./tailscale/luci-app-tailscale/
+        rm -rf ./tailscale
         
         
 
