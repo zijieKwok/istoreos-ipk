@@ -35,12 +35,12 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./istoreos/tailscale
-        rm -rf ./istoreos/tailscale
+        rm -rf ./tailscale
+        
          
-        git clone https://github.com/immortalwrt/packages.git -b openwrt-24.10 ./istoreos/tmp
-        mv ./istoreos/tmp/net/tailscale ./istoreos/
-        rm -rf ./istoreos/tmp
+        # git clone https://github.com/immortalwrt/packages.git -b openwrt-24.10 ./tailscale/tmp
+        # mv ./tailscale/tmp/net/tailscale ./tailscale/
+        # rm -rf ./tailscale/tmp
 
         
         
