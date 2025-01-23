@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 # 定时触发编译
-  schedule:
-    - cron: 0 */1 * * *
+#  schedule:
+#    - cron: 0 */1 * * *
 
 # 点赞☆Star触发编译
 #  watch:
@@ -36,12 +36,12 @@ jobs:
       run: |
 
         rm -rf ./luci-app-pushbot
-        rm -rf ./luci-app-wechatpush
+        
         # rm -rf ./luci-app-easymesh
         rm -rf ./luci-app-ikoolproxy
-        rm -rf ./luci-app-unblockneteasemusic
+        
         rm -rf ./linkease/*   
-        rm -rf ./op-oaf
+        
         rm -rf ./patch/wall/*
         rm -rf ./patch/wall-luci/luci-app-passwall
         rm -rf ./patch/wall-luci/luci-app-passwall2
@@ -50,7 +50,7 @@ jobs:
         rm -rf ./patch/wall-luci/luci-app-mihomo
         rm -rf ./patch/wall-luci/mihomo
         rm -rf ./patch/wall-luci/luci-app-homeproxy
-        rm -rf ./theme/luci-theme-argon
+        
         rm -rf ./luci-app-oled
         rm -rf ./op-lucky/*
         rm -rf ./op-daed/*
@@ -58,10 +58,6 @@ jobs:
          
         git clone https://github.com/zzsj0928/luci-app-pushbot ./luci-app-pushbot
         rm -rf ./luci-app-pushbo/README.md
-        git clone https://github.com/tty228/luci-app-wechatpush ./luci-app-wechatpush
-        rm -rf ./luci-app-wechatpush/README.md
-        rm -rf ./luci-app-wechatpush/README_en.md
-        rm -rf ./luci-app-wechatpush/.github
         # git clone https://github.com/stevenke1981/luci-app-easymesh ./luci-app-easymesh
         # rm -rf ./luci-app-easymesh/README.md
         git clone https://github.com/ilxp/luci-app-ikoolproxy ./luci-app-ikoolproxy
@@ -78,10 +74,6 @@ jobs:
         git clone https://github.com/linkease/nas-packages ./linkease/nas-packages
         mv ./linkease/nas-packages/multimedia/ffmpeg-remux ./linkease/nas-packages/
         mv ./linkease/nas-packages/network/services/* ./linkease/nas-packages/
-        rm -rf ./linkease/nas-packages/multimedia
-        rm -rf ./linkease/nas-packages/network
-        rm -rf ./linkease/nas-packages/.git
-        rm -rf ./linkease/nas-packages/README.md
         
         git clone https://github.com/linkease/istore ./linkease/iStore
         mv ./linkease/iStore/luci/*  ./linkease/luci/
@@ -93,10 +85,6 @@ jobs:
 
 
 
-        git clone https://github.com/destan19/OpenAppFilter ./op-oaf
-        rm -rf ./op-oaf/README.md
-
-        
         git clone https://github.com/xiaorouji/openwrt-passwall-packages ./patch/wall
         rm -rf ./patch/wall/.github
         # rm -rf ./patch/wall/chinadns-ng
@@ -134,18 +122,6 @@ jobs:
         rm -rf ./patch/wall-luci/luci-app-homeproxy/.github
         rm -rf ./patch/wall-luci/luci-app-homeproxy/.git
         
-        
-        git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic ./luci-app-unblockneteasemusic/
-        rm -rf ./luci-app-unblockneteasemusic/.github
-        rm -rf ./luci-app-unblockneteasemusic/README.md
-
-
-        git clone https://github.com/jerrykuku/luci-theme-argon ./theme/luci-theme-argon
-        rm -rf ./theme/luci-theme-argon/.github
-        rm -rf ./theme/luci-theme-argon/.gitignore     
-        rm -rf ./theme/luci-theme-argon/README*
-        rm -rf ./theme/luci-theme-argon/RELEASE*
-
         
         git clone https://github.com/unifreq/luci-app-oled ./oled
         mv ./oled/luci-app-oled ./
