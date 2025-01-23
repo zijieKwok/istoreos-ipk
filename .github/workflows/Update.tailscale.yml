@@ -38,9 +38,9 @@ jobs:
         rm -rf ./tailscale
         
          
-        # git clone https://github.com/immortalwrt/packages.git -b openwrt-24.10 ./tailscale/tmp
-        # mv ./tailscale/tmp/net/tailscale ./tailscale/
-        # rm -rf ./tailscale/tmp
+        git clone https://github.com/immortalwrt/packages.git -b openwrt-24.10 ./tailscale/tmp
+        mv ./tailscale/tmp/net/tailscale ./tailscale/
+        rm -rf ./tailscale/tmp
 
         
         
