@@ -43,8 +43,8 @@ jobs:
         # mv ./op-mosdns/tmp/mosdns ./op-mosdns/
         # mv ./op-mosdns/tmp/v2dat ./op-mosdns/
         # rm -rf ./op-mosdns/tmp     
-        git clone https://github.com/zijieKwok/jaykwok-ipk.git ./op-mosdns/tmp
-        mv ./op-mosdns/tmp/v2ray-geodata ./op-mosdns/v2ray-geodata
+        git clone https://github.com/zijieKwok/jaykwok-ipk.git -b master ./op-mosdns/tmp
+        mv ./op-mosdns/tmp/op-mosdns/v2ray-geodata ./op-mosdns/v2ray-geodata
         rm -rf ./op-mosdns/tmp 
 
         
