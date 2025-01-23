@@ -38,7 +38,7 @@ jobs:
         rm -rf ./patch/diy/golang
          
         git clone https://github.com/sbwml/packages_lang_golang -b 23.x ./patch/tmp
-        mv ./patch/tmp/golang ./patch/diy/
+        mv ./patch/tmp/* ./patch/diy/golang
         rm -rf ./patch/tmp
 
         
