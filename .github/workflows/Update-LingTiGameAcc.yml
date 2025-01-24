@@ -37,9 +37,8 @@ jobs:
 
         rm -rf ./LingTiGameAcc
          
-        git clone https://github.com/zijieKwok/jaykwok-ipk.git -b master ./tmp
-        mv ./tmp/LingTiGameAcc ./LingTiGameAcc/
-        rm -rf ./tmp 
+        git clone https://github.com/zijieKwok/jaykwok-ipk.git -b master ./LingTiGameAcc/
+         
 
         
     - name: Apply
