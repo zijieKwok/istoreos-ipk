@@ -38,7 +38,7 @@ jobs:
         rm -rf ./LingTiGameAcc/
         
          
-        git clone --depth=1 https://github.com/esirplayground/LingTiGameAcc.git ./LingTiGameAcc/
+        git clone --depth=1 https://github.com/esirplayground/LingTiGameAcc.git -b master ./LingTiGameAcc/
         
         
 
