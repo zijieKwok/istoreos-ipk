@@ -38,9 +38,8 @@ jobs:
         rm -rf ./msd_lite/luci-app-msd_lite
          
         git clone --depth=1 https://github.com/immortalwrt/luci.git -b openwrt-24.10
-        mv ./applications/luci-app-msd_lite ./msd_lite/
-        rm -rf ./applications
-
+        mv ./tmp/applications/luci-app-msd_lite ./msd_lite/
+        rm -rf ./tmp
         
         
     - name: Apply
