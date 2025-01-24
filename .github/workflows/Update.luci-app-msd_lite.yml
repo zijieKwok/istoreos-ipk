@@ -35,11 +35,11 @@ jobs:
     - name: Update.luci-app-msd_lite
       run: |
 
-        rm -rf ./luci-app-msd_lite
+        rm -rf ./msd_lite/luci-app-msd_lite
          
-        git clone https://github.com/immortalwrt/packages.git -b openwrt-24.10 ./msd_lite/luci-app-msd_lite/tmp
-        mv ./msd_lite/luci-app-msd_lite/tmp/applications/luci-app-msd_lite ./msd_lite/luci-app-msd_lite
-        rm -rf ./msd_lite/luci-app-msd_lite/tmp
+        git clone --depth=1 https://github.com/immortalwrt/luci.git -b openwrt-24.10
+        mv ./applications/luci-app-msd_lite ./msd_lite/
+        rm -rf ./applications
 
         
         
