@@ -37,8 +37,9 @@ jobs:
 
         rm -rf ./LingTiGameAcc
          
-        git clone https://github.com/esirplayground/LingTiGameAcc ./LingTiGameAcc
-        mv ./* ./LingTiGameAcc/
+        git clone https://github.com/esirplayground/LingTiGameAcc ./tmp/LingTiGameAcc
+        mv ./tmp/* ./LingTiGameAcc/
+        rm -rf ./tmp
 
         
     - name: Apply
