@@ -35,12 +35,12 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./LingTiGameAcc
-        # rm -rf ./patch/diy/LingTiGameAcc
+        # rm -rf ./LingTiGameAcc
+        rm -rf ./patch/diy/LingTiGameAcc
          
-        # git clone https://github.com/zijieKwok/istoreos-actions ./patch/tmp
-        # mv ./patch/tmp/* ./patch/diy/LingTiGameAcc
-        # rm -rf ./patch/tmp
+        git clone https://github.com/esirplayground/LingTiGameAcc ./patch/tmp
+        mv ./patch/tmp/* ./patch/diy/LingTiGameAcc
+        rm -rf ./patch/tmp
 
         
     - name: Apply
