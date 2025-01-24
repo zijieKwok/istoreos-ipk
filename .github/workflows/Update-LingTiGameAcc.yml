@@ -35,11 +35,11 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./LingTiGameAcc/
+        rm -rf ./LingTiGameAcc
          
-        git clone https://github.com/zijieKwok/jaykwok-ipk.git -b master ./LingTiGameAcc/tmp
-        mv ./LingTiGameAcc/tmp/LingTiGameAcc/ ./LingTiGameAcc/
-        rm -rf ./LingTiGameAcc/tmp 
+        git clone https://github.com/zijieKwok/jaykwok-ipk.git -b master ./tmp
+        mv ./tmp/LingTiGameAcc ./LingTiGameAcc/
+        rm -rf ./tmp 
 
         
     - name: Apply
