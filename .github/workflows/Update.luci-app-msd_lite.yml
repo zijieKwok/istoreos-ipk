@@ -37,9 +37,9 @@ jobs:
 
         rm -rf ./luci-app-msd_lite
          
-        # git clone https://github.com/immortalwrt/packages.git -b openwrt-24.10 ./msd_lite/luci-app-msd_lite/tmp
-        # mv ./msd_lite/luci-app-msd_lite/tmp/applications/luci-app-msd_lite ./msd_lite/luci-app-msd_lite
-        # rm -rf ./msd_lite/luci-app-msd_lite/tmp
+        git clone https://github.com/immortalwrt/packages.git -b openwrt-24.10 ./msd_lite/luci-app-msd_lite/tmp
+        mv ./msd_lite/luci-app-msd_lite/tmp/applications/luci-app-msd_lite ./msd_lite/luci-app-msd_lite
+        rm -rf ./msd_lite/luci-app-msd_lite/tmp
 
         
         
