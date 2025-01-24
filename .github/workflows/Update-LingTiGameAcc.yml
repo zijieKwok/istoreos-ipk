@@ -35,10 +35,10 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./LingTiGameAcc/*
+        rm -rf ./LingTiGameAcc
          
-        git clone https://github.com/esirplayground/LingTiGameAcc.git -b master ./LingTiGameAcc/
-         
+        git clone https://github.com/esirplayground/LingTiGameAcc ./LingTiGameAcc
+        rm -rf ./LingTiGameAcc/README.md
 
         
     - name: Apply
