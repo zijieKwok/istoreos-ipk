@@ -4,11 +4,11 @@
 mirrors() {
     local url="$1"
     case "$url" in
-        https://fw0.koolcenter.com/iStoreOS/*|\
-        https://fw.koolcenter.com/iStoreOS/*)
+        https://ota.5588999.xyz/iStoreOS/*|\
+        https://ota.5588999.xyz/iStoreOS/*)
             local path=$(echo "$url" | sed -E 's#^https?://[^/]+/(.*)#\1#')
             # echo "https://dl2.istoreos.com/$path"
-            echo "https://dl.istoreos.com/$path"
+            # echo "https://dl.istoreos.com/$path"
         ;;
     esac
     echo "$url"
