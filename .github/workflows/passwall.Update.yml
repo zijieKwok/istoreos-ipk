@@ -45,7 +45,7 @@ jobs:
        
         
         
-        git clone https://github.com/zijieKwok/JacKwok-passwall ./patch/wall-luci/pass
+        git clone https://github.com/zijieKwok/passwall ./patch/wall-luci/pass
         # git clone https://github.com/xiaorouji/openwrt-passwall2 ./patch/wall-luci/pass2
         mv ./patch/wall-luci/pass/luci-app-passwall ./patch/wall-luci/
         # mv ./patch/wall-luci/pass2/luci-app-passwall2 ./patch/wall-luci/
