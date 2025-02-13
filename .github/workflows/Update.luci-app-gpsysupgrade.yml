@@ -20,10 +20,9 @@ jobs:
 
     - name: Set git
       run : |
-        git config --global user.email "194788255+Jaykwok2999@users.noreply.github.com"
-        git config --global user.name "Jaykwok2999"
+        git config --global user.email "109743406+zijieKwok@users.noreply.github.com"
+        git config --global user.name "zijieKwok"
         sudo timedatectl set-timezone "Asia/Shanghai"
-
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@main
       continue-on-error: true
