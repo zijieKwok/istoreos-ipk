@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 # 定时触发编译
-#  schedule:
-#    - cron: 0 22 * * *
+  schedule:
+    - cron: 0 22 * * *
 
 # 点赞☆Star触发编译
 #  watch:
@@ -20,8 +20,8 @@ jobs:
 
     - name: Set git
       run : |
-        git config --global user.email "194788255+Jaykwok2999@users.noreply.github.com"
-        git config --global user.name "Jaykwok2999"
+        git config --global user.email "109743406+zijieKwok@users.noreply.github.com"
+        git config --global user.name "zijieKwok"
         sudo timedatectl set-timezone "Asia/Shanghai"
 
     - name: Delete workflow runs
